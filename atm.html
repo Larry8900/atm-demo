@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atm Gallery</title>
+    <link rel="stylesheet" href="atm.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap_css/bootstrap.min.css">
+
+</head>
+<body>
+    <div id="container" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+       <span>ATM</span>
+        <div id="display" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="displayScreen1">
+                <input type="text" placeholder="enter your name" id="input_name" onblur="getName()">
+            </div>
+           
+        </div>
+
+       
+        <div id="keypad" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
+                <div id="button">
+                <button id="button1">1</button>
+                <button id="button2">2</button>
+                <button id="button3">3</button> <button>*</button><br>
+                <button id="button4">4</button>
+                <button id="button5">5</button>
+                <button id="button6">6</button> <button>0</button> <br>
+                <button id="button7">7</button>
+                <button id="button8">8</button>
+                <button>9</button> <button>#</button><br>
+                <button id="cancel">cancel</button>
+                <div id="displayscreen2"></div>
+                <button id="enter">Enter</button>
+                
+                
+
+                </div>
+                
+        </div>
+    </div>
+    
+    
+  <script>
+
+var progress = 1;
+var balance = 0;
+const name = document.getElementById("input_name").value;
+function select_screen(){
+    
+    var welcome_screen = 
+    
+         `<p class="welcome_head"> Welcome ${name}. </p>
+         <p class="welcome_question"> What would you like to do? <br>
+         1. Deposit <br>
+         2. Withdrawl <br>
+         3. Exit 
+         </p>`
+         
+        
+        
+    
+    var screen = document.getElementById('display')
+    screen.innerHTML = welcome_screen
+    progress = 2;
+}
+
+function getName(){
+   
+    
+    
+    select_screen();
+}
+
+
+
+
+
+
+
+function buttonEventListener(){
+        var button1= document.getElementById("button1");
+        button1.addEventListener('click',function (){
+            var display = document.getElementById("displayscreen2");
+            display.innerHTML+=1;
+        
+         })
+
+        var button2= document.getElementById("button2");
+        button2.addEventListener('click',function (){
+            var display2 = document.getElementById("displayscreen2");
+            display2.innerHTML+=2;
+        })
+
+        var button3= document.getElementById("button3");
+        button3.addEventListener('click',function (){
+             var display3 = document.getElementById("displayscreen2");
+             display3.innerHTML+=2;
+        })
+
+        var buttonEnter = document.getElementById("enter");
+        buttonEnter.addEventListener('click', function(){
+            var display = document.getElementById("display");
+            var value = document.getElementById("displayscreen2").innerHTML;
+            if(progress=2 && value == 1){
+                deposit_screen()
+            }else if(progress=2 && value ==2){
+                withdrawal_screen();
+            }
+        })
+
+        var buttonCancel = document.getElementById("cancel");
+        buttonCancel.addEventListener('click', function(){
+            var cancelButton = document.getElementById("displayScreen2").innerText;
+            alert(cancelButton);
+        })
+ 
+    }
+
+buttonEventListener()
+
+function deposit_screen(){
+    var deposit_screen =`
+                <p> how much would you like to deposit?
+                    <input type="text" id="amount_screen"> <br>
+                    <button id="enter_button">ENTER</button></p>`
+                    
+                    var screen = document.getElementById("display");
+                    screen.innerHTML= deposit_screen;
+                    var enterButton = document.getElementById("enter_button");
+                    enterButton.addEventListener('click',function(){
+                        deposit();
+                        var innerl = document.getElementById("displayScreen2");
+                        inner1.innerHTML="";
+                      
+                       progress = 3
+                    })
+                    
+                    
+                    
+}
+function deposit(){
+    var value = document.getElementById("amount_screen").value;
+    value = parseInt(value);
+    balance =(balance + value);
+    alert('you have sucessfully deposited '+value + ' your balance is '+ balance);
+    if(progress == 3){
+        var innerHtml = document.getElementById("displayScreen2");
+        innerHtml.innerHTML=" ";
+
+    getName()}
+    
+    
+}
+
+function withdrawal_screen(){
+    var withdrawl_screen = `
+                <p> how much would you like to withdrawl?
+                    <input type="text" id='amount_screen'> <br>
+                    <button id="enter_button">ENTER</p>`
+                    var screen= document.getElementById("display");
+                    screen.innerHTML= withdrawl_screen;
+                    var enter_button = document.getElementById("enter_button");
+                    enter_button.addEventListener('click', function(){
+                        withdrawl();
+
+                    })
+                    progress = 4
+}
+function withdrawl(){
+    var value= document.getElementById("amount_screen").value;
+    balance = parseInt(balance - value);
+    
+    alert('you have succesfully withdrawl '+ value+', your balance is ' + balance);
+    document.getElementById("innerScreen2").innerText = " ";
+    
+    select_screen();
+
+}
+
+
+
+
+
+
+  </script>
+</body>
+</html>

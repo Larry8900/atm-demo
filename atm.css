@@ -1,0 +1,132 @@
+
+*{
+    margin: 0%;
+    padding: 10px;
+}
+#container{
+    border-radius: 10px;
+    border: 3px groove rgb(230, 65, 65);
+    padding: 5px 20px;
+    background-color: rgb(245, 173, 66);
+    height: 25rem;
+}
+span{
+    position: relative;
+    left: 7rem;
+    top: -2px;
+    color: black;
+    border: 2px inset rgb(235, 92, 92);
+    background-color: bisque;
+    padding: 1px;
+    display: inline-block;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#atm:hover{
+    background-color: wheat;
+    color: black;
+}
+#display{
+    padding: 0%;
+    background-color: rgb(26, 25, 25);
+    border-radius: 20px;
+    position: relative;
+    top: -20px;
+    width: 100%;
+    height: 13rem;
+    margin-top: 20px;
+    color: white;
+    
+}
+#displayscreen2{
+    background-color: red;
+    padding: 7%;
+    float: right;
+    position: absolute;
+    border: 2px solid green;
+    display: inline-block;
+    top: -5%;
+    left: 45%;
+    
+}
+input{
+    color: black;
+    display: inline-block;
+    background-color: darkred;
+    padding: 1rem;
+    text-align: center;
+    border: 3px inset red;
+    border-radius: 10px;
+}
+#enter_button{
+    padding: 1rem 0.5rem 2rem;
+    float: right;
+    top: 1px;
+    color: gold;
+    border-radius: 10px;
+    border: 2px inset red;
+    background-color: darkred;
+    text-align: center;
+    padding-top: 1rem;
+}
+#enter_button:hover{
+    background-color: chartreuse;
+    color: black;
+    border: chocolate;
+
+}
+.welcome_question{
+    font-size: 10px;
+
+}
+#keypad{
+    padding: 5px 0px 5px;
+    border-radius: 10px;
+    border: 3px groove rgb(219, 91, 91);
+    background-color: rgb(187, 138, 79);
+    height: 7rem;
+    position: relative;
+    color: black;
+    font-size: 7px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: -10px;
+}
+
+
+button{
+    padding: 1px 10px;
+    display: inline;
+    height: 2rem;
+    font-size: 3px;
+    text-align: center;
+    position: relative;
+    top: -1.3rem;
+    border-radius: 5px;
+    border: 1px inset red;
+}
+button:hover{
+    background-color: darkslategray;
+    color: aliceblue;
+   
+
+    
+}
+
+#enter{
+    font-size: 8px;
+    text-align: center;
+    padding: 10px 12px 20px;
+    position: absolute;
+    left: 12.4rem;
+    top: 3rem;
+}
+#cancel{
+    font-size: 10px;
+    text-align: center;
+    display: inline;
+    padding: 3px 6px 4px;
+    position: absolute;
+    left: 12.4rem;
+    top: 0.2rem;
+
+}
